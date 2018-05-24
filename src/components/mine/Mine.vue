@@ -1,6 +1,13 @@
 <template>
 	<div class="mine">
-		<p class="mine_title">列表页面</p>
+		<headerTop 
+		  ref="headerTop"
+		  v-on:leftClick="leftClicks"
+		  v-on:rightClick="rightClicks"
+		  :title="title"
+		  :iconLeft="iconLeft"
+		  :leftText="leftText"
+		  :rightText="rightText"></headerTop>
 		<div class="mine_content">
 			<div class="left">
 				<div class="left_item" v-for="item in leftData" :key="item.id" @click="itemClick(item.id)">
@@ -18,10 +25,16 @@
 </template>
 
 <script>
+	import headerTop from '../public/headers/Headers'
 	export default {
 		name:'mine',
 		data () {
 			return {
+				title:'列表页面',
+				iconLeft:'iconfont icon-arrowleft',
+				leftText:'返回',
+				iconRight:'iconfont icon-arrowleft',
+				rightText:'保存',
 				messages:'我是Mine页面',
 				leftState:1,
 				rightState:null,
@@ -85,7 +98,18 @@
 			},
 			itemRightClick(id) {
 				this.rightState = id;
+			},
+			leftClicks(itemId){
+				console.log('parent:'+itemId);
+				this.$router.push({path:'/main/home'});
+			},
+			rightClicks(itemId){
+				console.log('parent:'+itemId);
+				alert('保存列表页面成功！');
 			}
+		},
+		components: {
+			headerTop
 		}
 	}
 </script>
