@@ -2,7 +2,8 @@
 	<div class="login">
 		<div class="header_img"></div>
 		<el-form :model="ruleForm" :rules="rules" ref="ruleForm" class="login_form">
-			<el-form-item prop="account">
+			<div class="input">
+				<el-form-item prop="account">
 				<el-input placeholder="请输入账号"
 				class="input_text_1"
 				prefix-icon="iconfont icon-account"
@@ -17,6 +18,8 @@
 				type="password"
 				clearable/>
 			</el-form-item>
+			</div>
+			
 			
 			<el-form-item class="button_group">
 				<el-button @click="onLogin('ruleForm')" class="btn_login" type="primary">登录</el-button>
@@ -67,9 +70,12 @@
 </script>
 
 <style scoped>
+	.input{
+		padding-top: 10px;
+	}
 	.el-form-item{
-		margin:0 !important;;
-		padding: 0;
+		padding: 10px 0;
+    	margin: 0px 20px !important;
 	}
 	.el-form-item__error{
 		left: 15px !important;
@@ -94,18 +100,18 @@
 		border-radius: 5px;
 		box-shadow: 0 0 3px #000;
 	}
-	.input_text_1{
+	/* .input_text_1{
 		width: 90%;
-    	margin: 30px 15px 0px;
+	    	margin: 30px 15px 0px;
 	}
 	.input_text_2{
 		width: 90%;
-    	margin: 20px 15px 0px;
-	}
+	    	margin: 20px 15px 0px;
+	} */
 	.button_group{
 		display: flex;
 		width: 220px;
-		margin:20px auto !important;
+		margin:5px auto !important;
 	}
 	.btn_login{
 		width: 100px;

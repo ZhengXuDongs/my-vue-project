@@ -27,12 +27,12 @@
     id:2,
     iclass:"iconfont icon-xiaoxi",
     text:'消息',
-    url_name:'home'
+    url_name:'count'
   },{
     id:3,
     iclass:"iconfont icon-geren",
     text:'个人中心',
-    url_name:'mine'
+    url_name:'person-center'
   }]
 export default {
   name: 'mains',
